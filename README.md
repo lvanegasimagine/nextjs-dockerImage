@@ -31,8 +31,17 @@ docker run -p 3000:3000 nextjs-docker .
 ```
 
 # Script Package
+```
+"bd-image": "docker-compose up -d",
+```
 
+```
+"run-image": "docker build -t nextjs-docker . && docker run -p 3000:3000 nextjs-docker .",
+```
 
+```
+"build-image": "docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build",
+```
 
 # Production Build
 
