@@ -14,9 +14,35 @@ pnpm dev
 
 ## Using Docker
 
-1. [Install Docker](https://docs.docker.com/get-docker/) on your machine.
-1. Build your container: `docker build -t nextjs-docker .`.
-1. Run your container: `docker run -p 3000:3000 nextjs-docker`.
+1. Levantar la base de datos
+
+```
+docker-compose up -d
+```
+
+2. Build del Contenedor
+```
+docker build -t nextjs-docker .
+```
+3. Correr el Contenedor
+
+```
+docker run -p 3000:3000 nextjs-docker .
+```
+
+# Script Package
+
+
+
+# Production Build
+
+1. Crear el archivo ```.env.prod```
+2. Llenar las variables de entorno definidas en el ```.env.template```
+3. Crear la nueva imagen
+
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
 
 You can view your images created with `docker images`.
 

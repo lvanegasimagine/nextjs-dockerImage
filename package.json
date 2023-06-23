@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next build && next export",
-    "build-docker": "docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build",
+    "bd-image": "docker-compose up -d",
+    "run-image": "docker build -t nextjs-docker . && docker run -p 3000:3000 nextjs-docker .",
+    "build-image": "docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build",
     "start": "next start",
     "lint": "next lint"
   },
